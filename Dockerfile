@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Copy the built jar file from the target folder
-COPY target/ToDo-crud-api-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Expose the port Spring Boot runs on
 EXPOSE 8080
